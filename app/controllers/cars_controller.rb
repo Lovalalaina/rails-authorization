@@ -27,14 +27,14 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.user = current_user
     @car.save
-    redirect_to cars_patch
+    redirect_to cars_path
 
   end
 
   def update
     @car = Car.find(params[:id])
     @car.update(car_params)
-    redirect_to car_patch(@car)
+    redirect_to car_path(@car)
 
   end
 
